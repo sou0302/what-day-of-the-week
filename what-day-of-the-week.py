@@ -35,4 +35,4 @@ async def on_message(message):
         await message.channel.send(f'{date_str}のあなたは{day_of_week}生まれです。')
 
 # Discord Botのトークンを設定
-client.run('TOKEN')
+client.run('DISCORD_TOKEN')
