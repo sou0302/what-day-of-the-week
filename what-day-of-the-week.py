@@ -1,6 +1,9 @@
+import discord
+import datetime
+import os
+
 # 曜日を日本語で定義
 days_of_week_japanese = ['月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日', '日曜日']
-
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -32,5 +35,5 @@ async def on_message(message):
         date_str = f'{date.year}年{date.month}月{date.day}日'
         await message.channel.send(f'{date_str}のあなたは{day_of_week}生まれです。')
 
-# Discord Botのトークンを設定
-client.run('DISCORD_TOKEN')
+# Discord Botのトークンを環境変数から取得
+client.run(os.getenv('DISCORD_TOKEN'))
